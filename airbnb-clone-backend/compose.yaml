@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'airbnb-postgres'
+    volumes:
+      - 'airbnb-data:/var/lib/postgresql/data'
+    environment:
+      - 'POSTGRES_DB=airbnb_clone'
+      - 'POSTGRES_PASSWORD=pgadmin123'
+      - 'POSTGRES_USER=pguser'
+    ports:
+      - '127.0.0.1:5432:5432'
+
+volumes:
+  airbnb-data:
